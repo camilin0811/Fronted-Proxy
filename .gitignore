@@ -1,5 +1,9 @@
 node_modules
 dist
+.DS_Store
+.vercel
+
+# Local env files. .env.example and .env.production are tracked on purpose.
 .env
 .env.local
-.DS_Store
+.env.*.local
