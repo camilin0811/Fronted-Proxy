@@ -24,8 +24,10 @@ npm run dev               # http://localhost:5173
 ## Deploy on Vercel
 
 1. Vercel → Add New Project → import `camilin0811/Fronted-Proxy` (framework: Vite, root directory: repository root).
-2. Environment variable: `VITE_API_URL = https://<your-backend>.up.railway.app`
-3. Deploy, then set `FRONTEND_URL` in Railway to the Vercel URL (CORS).
+2. `VITE_API_URL` already points to the Render backend through `.env.production`; set it in the Vercel
+   dashboard only to override that value (for example, to test against a local or staging backend).
+3. After the first deploy, set `FRONTEND_URL` in Render to the Vercel URL. Without it the backend answers
+   the browser preflight with **403 Forbidden** and every request fails.
 
 ## Structure
 
